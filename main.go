@@ -25,7 +25,7 @@ func main() {
 	// Register routes
 	routeHandler := router.Make()
 	srv := &http.Server{
-		Addr:    ":8080",
+		Addr:    ":" + config.HTTPPort,
 		Handler: routeHandler,
 	}
 

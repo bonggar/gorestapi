@@ -1,8 +1,10 @@
 package router
 
 import (
+	"github.com/bonggar/gorestapi/config"
 	"github.com/bonggar/gorestapi/service"
 
+	"github.com/gin-gonic/contrib/static"
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,8 +18,14 @@ func Cors() gin.HandlerFunc {
 
 //Make : create endpoints
 func Make() *gin.Engine {
+	//Default : debug
+	gin.SetMode(config.GinMode)
+
 	//Default : with the Logger and Recovery middleware already attached
 	r := gin.Default()
+
+	//Serve frontend static files, ex: ReactJS
+	r.Use(static.Serve("/", static.LocalFile("./view", true)))
 
 	//Applying CORS rule
 	r.Use(Cors())
