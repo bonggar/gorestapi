@@ -141,3 +141,13 @@ List of endpoint :
 
 Run unit test :
 > go test -v ./...
+
+
+## Authors
+
+* **Bonggar Situmorang** - *Initial work* - [bonggar](https://github.com/bonggar)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
